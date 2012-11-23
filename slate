@@ -1,0 +1,40 @@
+# Globals
+
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpread true
+
+# alias hyper f19
+alias hyper ctrl;cmd;alt;shift
+
+
+# Focus Bindings
+
+bind j:${hyper} focus behind
+
+bind t:${hyper} focus 'iTerm'
+bind m:${hyper} focus 'Sparrow'
+bind c:${hyper} focus  'Skype'
+
+# Moving Windows 
+#
+bind left:${hyper} push left
+bind right:${hyper} push right
+bind down:${hyper} push down
+bind up:${hyper} push up
+
+# Resizing Windows
+
+bind -:${hyper} resize -10% -5%
+bind =:${hyper} resize +10% +5%
+
+# Window Hints
+bind esc:cmd hint 1234QWERASDFXCVB
+
+
+# Testing
+bind g:cmd grid 0:6,3
