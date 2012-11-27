@@ -1,13 +1,9 @@
 # path
 
-# for ls
+# command alias
 alias ls='ls -G'
-
-# for todo.sh
-alias t='todo.sh -d ~/.todo.cfg'
-export TODOTXT_DEFAULT_ACTION=ls
-#source ~/.todocomplete.bash
-. .bash_completion/*
+alias t='python ~/src/t/t.py --task-dir ~/Desktop --list TASKS.txt'
+export LESS='-P%f (%i/%m) Line %lt/%L'
 
 # RVM
 #[[ -s "/usr/local/rvm/scripts/rvm" ]] && . "/usr/local/rvm/scripts/rvm" # 
