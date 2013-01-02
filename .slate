@@ -1,4 +1,5 @@
-# Globals
+# This is the default .slate file.
+# If no ~/.slate file exists this is the file that will be used.
 
 config defaultToCurrentScreen true
 config nudgePercentOf screenSize
