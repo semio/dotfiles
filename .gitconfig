@@ -81,4 +81,4 @@ email = prairy.long@gmail.com
 	insteadOf = "gist:"
 
 [push]
-	default = simple
+	default = current
