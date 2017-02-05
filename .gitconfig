@@ -1,6 +1,26 @@
 [user]
-name = semio
-email = prairy.long@gmail.com
+	email = prairy.long@gmail.com
+	name = semio
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[diff "csv"]
+    wordRegex = [^,\n]+[,\n]|[,]
+[diff "daff-csv"]
+	command = daff diff --git
+[merge "daff-csv"]
+	name = daff tabular csv merge
+	driver = daff merge --output %A %O %A %B
+[merge "coopy-merge-csv"]
+  name = coopy CSV merge
+  driver = ssmerge --output dbi:csv::file=%A dbi:csv::file=%O dbi:csv::file=%A dbi:csv::file=%B
+[merge]
+	tool = kdiff3
+	# Include summaries of merged commits in newly created merge commit messages
+	log = true
+[mergetool "kdiff3"]
+	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
 
 [alias]
 	# View the SHA, description, and history graph of the latest 20 commits
@@ -35,6 +55,7 @@ email = prairy.long@gmail.com
 	whitespace = fix
 
 [core]
+	editor = /usr/local/bin/vim
 	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
@@ -57,9 +78,6 @@ email = prairy.long@gmail.com
 	added = yellow
 	changed = green
 	untracked = cyan
-[merge]
-	# Include summaries of merged commits in newly created merge commit messages
-	log = true
 
 # Use `origin` as the default remote on the `master` branch in all cases
 [branch "master"]
